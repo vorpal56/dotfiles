@@ -1,0 +1,25 @@
+---
+"editor_view:select_all": ctrl-a
+"workspace:move_tab_right": cmd-right
+"terminal:ask_ai_assistant": none
+"editor_view:select_left_by_word": ctrl-shift-left
+"editor_view:cmd_down": none
+"editor_view:select_right_by_word": ctrl-shift-right
+"editor:delete_word_left": ctrl-backspace
+"editor_view:clear_buffer": none
+"editor_view:move_forward_one_word": ctrl-right
+"input:toggle_natural_language_command_search": "cmd-\\"
+"terminal:copy": ctrl-shift-C
+"editor_view:home": none
+"editor_view:move_backward_one_word": ctrl-left
+"pane_group:add_left": cmd-a
+"editor:delete_word_right": ctrl-delete
+"workspace:move_tab_left": cmd-left
+"ai_assistant_panel:focus_terminal_input": none
+"terminal:paste": ctrl-v
+"editor_view:select_left": none
+"editor_view:right": none
+"terminal:select_all_blocks": none
+"terminal:copy_outputs": none
+"editor_view:end": none
+"terminal:find": none
