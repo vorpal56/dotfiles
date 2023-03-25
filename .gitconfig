@@ -1,0 +1,24 @@
+[user]
+	name = vorpal56
+	email = anthonysukadil1@gmail.com
+[alias]
+	co = checkout
+	cob = checkout -b
+	br = branch
+	bd = branch -D
+	cbn = rev-parse --abrev-ref HEAD
+	fpo = fetch --prune origin --no-tags
+
+    pruneb = !git checkout master && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d
+    up = !git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
+    upf = !git push -u --force-with-lease origin \"$(git rev-parse --abbrev-ref HEAD)\"
+	poc = !git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"
+	po = pull origin
+
+    cp = cherry-pick
+	cm = commit -m
+	st = status
+
+	bl = branch --list
+	logo = log --oneline
+	logmp = log --oneline --merges --pretty=format:"%h%x09%an%x09%ad%x09%s"
