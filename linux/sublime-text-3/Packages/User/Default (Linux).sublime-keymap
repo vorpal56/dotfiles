@@ -8,4 +8,5 @@
     { "keys": ["alt+up"], "command": "prev_modification" },
     { "keys": ["alt+down"], "command": "next_modification" },
     { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+`"], "command": "toggle_terminus_panel", "args": { "cwd": "${folder}" } },
 ]
