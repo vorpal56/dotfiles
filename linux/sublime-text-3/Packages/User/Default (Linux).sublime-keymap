@@ -1,0 +1,11 @@
+[
+    { "keys": ["ctrl+o"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    { "keys": ["ctrl+shift+o"], "command": "goto_symbol_in_project" },
+    { "keys": ["alt+left"], "command": "jump_back" },
+    { "keys": ["alt+right"], "command": "jump_forward" },
+    { "keys": ["ctrl+shift+s"], "command": "save_all" },
+    { "keys": ["ctrl+alt+s"], "command": "prompt_save_as" },
+    { "keys": ["alt+up"], "command": "prev_modification" },
+    { "keys": ["alt+down"], "command": "next_modification" },
+    { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+]
