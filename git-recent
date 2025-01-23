@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# Source:   https://gist.github.com/fritz-c/c1e528b09bc1c0827a3c
+# Original: https://gist.github.com/jordan-brough/48e2803c0ffa6dc2e0bd
+
+# Download this script as "git-recent" (no extension), chmod it to be executable and put it in your
+# path somewhere (e.g. /usr/bin). You can then use it via `git recent` from inside any git repo.
+
+# Example:
+#
+# $ git recent -n 3
+# 1) master
+# 2) stable
+# 3) develop
+# Choose a branch (or 'q' to quit): 3
+# Switched to branch 'develop'
+
+usage()
+{
+  echo "usage: git recent [-n lines]"
+}
+
+while getopts "n:" opt; do
+  case $opt in
+    n)
+      NUM=$OPTARG
+      ;;
+    \?)
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+NUM=${NUM-5} # default to 5 lines
+
+# This: `awk ' !x[$0]++'` removes duplicates.  See http://stackoverflow.com/questions/11532157
+UNIQUE_BRANCHES=$(git reflog | egrep -io "moving from ([^[:space:]]+)" | awk '{ print $3 }' | awk ' !x[$0]++')
+
+# Exclude branches that don't exist locally
+BRANCH_CHOICES=( $(echo "$UNIQUE_BRANCHES" | while read line; do
+  git rev-parse --verify "$line" &>/dev/null && echo "$line"
+done | head -n "$NUM") )
+
+# Show the selectable options as 1 column
+COLUMNS=1
+PS3="Choose a branch (or 'q' to quit): "
+select d in "${BRANCH_CHOICES[@]}"; do
+    if [[ "$REPLY" == "q" ]]; then
+        exit 0
+    elif test -n "$d"; then
+        break
+    else
+        echo ">>> Invalid Selection"
+    fi
+done
+
+if test -n "$d"; then
+    git checkout "$d"
+else
+    echo "No branches to select from"
+fi
