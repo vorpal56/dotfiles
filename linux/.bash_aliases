@@ -1,0 +1,5 @@
+alias home='cd ~/'
+alias activate='source venv/bin/activate'
+alias kazam='cd ~/kazam/bin && ./kazam'
+alias mem='htop --sort-key=PERCENT_MEM && echo H'
+alias fixkeys='echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode'
