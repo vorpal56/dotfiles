@@ -6,7 +6,7 @@
 [alias]
     co = checkout
     cob = checkout -b
-    bb = !git for-each-ref --color --sort=-committerdate --format='%(color: bold magenta)%(align:60,left)%(refname:short)%(color:bold red) %(upstream:track,nobracket)%(end)%(color:nobold yellow)%(align:58,left)%(committerdate:format:%Y-%d-%m %H:%M) (%(committerdate:relative), %(committerdate:format:%A %d))%(end)%(color:green)%(align:24,left)%(authorname)%(end)%(color:green)%(align:64,left)%(contents:lines=1)%(end)' refs/heads/ --count 5
+    bb = !git for-each-ref --color --sort=-committerdate --format='%(color:normal)%(align:64,left)%(refname:short)%(color:red) %(upstream:track)%(end)%(color:green)%(align:20,left)%(authorname)%(end)%(color:yellow)%(align:36,left)%(committerdate:format:%Y-%m-%d %H:%M) (%(committerdate:relative))%(end)%(color:reset)%(align:32,left)%(contents:lines=1)%(end)' refs/heads/ --count 5
     bd = branch -D
     cbn = rev-parse --abrev-ref HEAD
     fpo = fetch --prune origin --no-tags
