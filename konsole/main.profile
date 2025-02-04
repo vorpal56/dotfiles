@@ -7,7 +7,7 @@ UseFontLineChararacters=false
 
 [General]
 LocalTabTitleFormat=%D: %n
-Name=Profile 1
+Name=main
 Parent=FALLBACK/
 TerminalColumns=120
 TerminalRows=32
