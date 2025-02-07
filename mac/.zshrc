@@ -1,4 +1,18 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# git completions and others
+autoload -Uz compinit && compinit
+
+# allow case-insensitive match when using tab
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# Not sure if these work?
+#bindkey "^[[1;5C" forward-word
+#bindkey "^[[1;5D" backward-word
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
@@ -8,8 +22,13 @@ print() {
   [ 0 -eq $# -a "prompt_pure_precmd" = "${funcstack[-1]}" ] || builtin print "$@";
 }
 autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color white
+zstyle :prompt:pure:path color blue
+zstyle :prompt:pure:git:branch color green
 prompt pure
 # Removes the newline of prompt https://github.com/sindresorhus/pure/issues/228#issuecomment-299425799
 prompt_newline='%666v'
 PROMPT=" $PROMPT"
+
+# Auto suggestions by pressing right arrow
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zaliases
