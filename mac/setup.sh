@@ -15,6 +15,10 @@ sudo cp local.removecapslockdelay.plist /Library/LaunchDaemons/
 # TODO: setting is wrong?
 # defaults write -g com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+# Allows you to tap with two fingers and click the bottom right on the trackpad instead of xor
+defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+
 # Minimizes the dock delay and animation speed
 defaults write com.apple.dock autohide-delay -float 0.01
 defaults write com.apple.dock autohide-time-modifier -float 0.2
