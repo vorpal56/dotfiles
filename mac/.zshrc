@@ -6,6 +6,10 @@ autoload -Uz compinit && compinit
 # allow case-insensitive match when using tab
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# change the definition of word to bash style which is a-zA-Z0-9 vs zsh which is anything between spaces
+autoload -U select-word-style
+select-word-style bash
+
 # Not sure if these work? use cat -v to check key combos
 #bindkey "^[[1;5C" forward-word
 #bindkey "^[[1;5D" backward-word
