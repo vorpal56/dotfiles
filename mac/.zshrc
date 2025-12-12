@@ -6,11 +6,15 @@ autoload -Uz compinit && compinit
 # allow case-insensitive match when using tab
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Not sure if these work?
+# Not sure if these work? use cat -v to check key combos
 #bindkey "^[[1;5C" forward-word
 #bindkey "^[[1;5D" backward-word
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+
+# vscode sometimes sends ^[b or ^[[1;3D regardless of terminal.integrated.macOptionIsMeta
+bindkey "^[b" backward-word
+bindkey "^[[1;3D" backward-word
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
