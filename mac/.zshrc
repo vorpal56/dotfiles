@@ -21,8 +21,9 @@ bindkey "^[b" backward-word
 bindkey "^[[1;3D" backward-word
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/opt/homebrew/opt/pyenv/bin:$PATH"
 eval "$(pyenv init - zsh)"
 
 # Removes newline after each command https://github.com/sindresorhus/pure/issues/509#issuecomment-641001784
