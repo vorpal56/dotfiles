@@ -8,7 +8,7 @@
 
 # Example:
 #
-# $ git recent -n 3
+# $ git recent 3
 # 1) master
 # 2) stable
 # 3) develop
@@ -17,7 +17,7 @@
 
 usage()
 {
-  echo "usage: git recent [-n lines]"
+  echo "usage: git recent [-n lines | <number>]"
 }
 
 while getopts "n:" opt; do
@@ -31,6 +31,18 @@ while getopts "n:" opt; do
       ;;
   esac
 done
+
+shift $((OPTIND - 1))
+
+# If a bare number is passed as a positional argument, use it
+if [[ -n "$1" ]]; then
+  if [[ "$1" =~ ^[0-9]+$ ]]; then
+    NUM=$1
+  else
+    usage
+    exit 1
+  fi
+fi
 
 NUM=${NUM-5} # default to 5 lines
 
