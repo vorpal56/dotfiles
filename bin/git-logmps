@@ -1,0 +1,17 @@
+#!/bin/bash
+
+REMOTE_URL=$(git remote get-url origin)
+REPO=$(echo "$REMOTE_URL" | sed 's/.*github.com[:/]//;s/\.git$//')
+BASE_URL="https://github.com/$REPO"
+RANGE="$1"
+BASE=$(echo "$RANGE" | sed 's/\.\..*//')
+COMMITS=$(git log "$RANGE" --oneline --merges --grep="Merge pull request" --pretty=format:"%h %s")
+LAST=$(echo "$COMMITS" | head -1 | awk '{print $1}')
+
+echo "[$BASE_URL/compare/$BASE..$LAST]($BASE_URL/compare/$BASE..$LAST)"
+echo ""
+
+echo "$COMMITS" | while IFS= read -r line; do
+  PR=$(echo "$line" | grep -oE '#[0-9]+' | head -1 | tr -d '#')
+  echo "[#$PR]($BASE_URL/pull/$PR) $line"
+done
