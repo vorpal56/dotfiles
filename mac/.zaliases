@@ -1,0 +1,2 @@
+alias home='cd ~/'
+alias activate='source .venv/bin/activate'
