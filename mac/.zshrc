@@ -24,6 +24,8 @@ bindkey "^[b" backward-word
 bindkey "^[[1;3D" backward-word
 
 export AWS_PAGER=""
+# include any custom scripts
+export PATH="$HOME/.local/bin:$PATH"
 
 # pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
