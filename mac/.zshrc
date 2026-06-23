@@ -10,6 +10,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload -U select-word-style
 select-word-style bash
 
+# allow comments in the shell without throwing an error
+setopt interactivecomments
+
 # Not sure if these work? use cat -v to check key combos
 #bindkey "^[[1;5C" forward-word
 #bindkey "^[[1;5D" backward-word
