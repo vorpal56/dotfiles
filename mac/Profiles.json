@@ -1,4 +1,6 @@
 {
+"Profiles": [
+{
   "Ansi 7 Color (Light)" : {
     "Red Component" : 0.7810397744178772,
     "Color Space" : "sRGB",
@@ -739,4 +741,6 @@
     "Alpha Component" : 1,
     "Green Component" : 0.098039217293262482
   }
+}
+]
 }
