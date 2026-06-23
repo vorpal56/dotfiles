@@ -16,6 +16,7 @@
     up = !git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
     upf = !git push -u --force-with-lease origin \"$(git rev-parse --abbrev-ref HEAD)\"
     poc = !git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"
+    rep = "!f() { for file in $(git diff --name-only --cached); do git add -p \"$file\"; done; }; f"
 
     cp = cherry-pick
     cm = commit -m
