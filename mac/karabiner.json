@@ -2552,7 +2552,6 @@
                     },
                     {
                         "description": "Tab (Alt) [+IDEs, Remote Desktops, and Terminal Emulators]",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
