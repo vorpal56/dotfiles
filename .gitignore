@@ -1,1 +1,4 @@
 .DS_Store
+**/sublime-text-3/Local/
+**/sublime-text-3/Lib/
+**/sublime-text-3/Log/
