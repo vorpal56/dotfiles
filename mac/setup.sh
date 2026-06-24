@@ -12,6 +12,13 @@ sudo cp DefaultKeyBinding.dict ~/Library/Keybindings/
 # Can also move to ~/Library/LaunchAgents/
 sudo cp local.removecapslockdelay.plist /Library/LaunchDaemons/
 
+if command -v code &>/dev/null; then
+    code --profile-import vs.code-profile
+else
+    echo "Error: 'code' CLI not found. Open VS Code and run: Shell Command: Install 'code' command in PATH" >&2
+    exit 1
+fi
+
 # Turns on natural scrolling (so that it's inverted, swipe up is down, swipe down is up). Trackpad only thing?
 # Settings > Trackpad > Scroll & Zoom > Natural Scrolling is ON
 # defaults write -g com.apple.swipescrolldirection -bool true
