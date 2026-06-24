@@ -1,8 +1,9 @@
 #!/bin/zsh
 
 brew bundle install --file Brewfile
-cp karabiner.json ~/.config/karabiner/
-cp -r ../bin/* ~/.local/bin/
+
+mkdir -p ~/.config/karabiner && cp karabiner.json ~/.config/karabiner/
+mkdir -p ~/.local/bin && cp -r ../bin/* ~/.local/bin/
 
 sudo cp com.googlecode.iterm2.plist ~/Library/Preferences/
 sudo cp DefaultKeyBinding.dict ~/Library/Keybindings/
