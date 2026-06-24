@@ -37,7 +37,6 @@ For a good reference see http://osxnotes.net/keybindings.html.
 NOTE: typically the Windows 'Insert' key is mapped to what Macs call 'Help'.
 Regular Mac keyboards don't even have the Insert key, but provide 'Fn' instead,
 which is completely different.
-*/
 
 {
     "\UF729"   = "moveToBeginningOfLine:";                       /* Home                  */
@@ -63,4 +62,9 @@ which is completely different.
     "^\UF703"  = "moveWordForward:";                             /* Ctrl + RightArrow             */
     "^\UF728"  = "deleteWordForward:";                           /* Ctrl + Delete                 */
     "^$\UF703" = "moveWordForwardAndModifySelection:";           /* Ctrl + Shift     + RightArrow */
+}
+*/
+
+{
+    "^/" = "noop:"; /* default bonk or bell sound when using comment trigger */
 }

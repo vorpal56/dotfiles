@@ -5,6 +5,7 @@ cp karabiner.json ~/.config/karabiner/
 cp -r ../bin/* ~/.local/bin/
 
 sudo cp com.googlecode.iterm2.plist ~/Library/Preferences/
+sudo cp DefaultKeyBinding.dict ~/Library/Keybindings/
 
 # Removes the caps lock delay. Could also be in ~/Library/LaunchAgents/
 # Can also move to ~/Library/LaunchAgents/
