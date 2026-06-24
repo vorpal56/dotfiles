@@ -5,19 +5,13 @@ brew bundle install --file Brewfile
 mkdir -p ~/.config/karabiner && cp karabiner.json ~/.config/karabiner/
 mkdir -p ~/.local/bin && cp -r ../bin/* ~/.local/bin/
 
-sudo cp com.googlecode.iterm2.plist ~/Library/Preferences/
-sudo cp DefaultKeyBinding.dict ~/Library/Keybindings/
+sudo cp iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
+mkdir -p ~/Library/Keybindings/ && sudo cp DefaultKeyBinding.dict ~/Library/Keybindings/
+mkdir -p ~/Library/Application\ Support/Sublime\ Text/ && sudo cp -r ../sublime-text-3/ ~/Library/Application\ Support/Sublime\ Text/
 
 # Removes the caps lock delay. Could also be in ~/Library/LaunchAgents/
 # Can also move to ~/Library/LaunchAgents/
 sudo cp local.removecapslockdelay.plist /Library/LaunchDaemons/
-
-if command -v code &>/dev/null; then
-    code --profile-import vs.code-profile
-else
-    echo "Error: 'code' CLI not found. Open VS Code and run: Shell Command: Install 'code' command in PATH" >&2
-    exit 1
-fi
 
 # Turns on natural scrolling (so that it's inverted, swipe up is down, swipe down is up). Trackpad only thing?
 # Settings > Trackpad > Scroll & Zoom > Natural Scrolling is ON
