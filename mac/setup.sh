@@ -17,9 +17,14 @@ sudo mv /tmp/iterm2-3.5.14/iTerm.app /Applications/iTerm.app
 mkdir -p ~/.config/karabiner && cp karabiner.json ~/.config/karabiner/
 mkdir -p ~/.local/bin && cp -r ../bin/* ~/.local/bin/
 
-sudo cp iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
+[ "$(stat -f '%Su' ~/Library/Preferences/)" != "$USER" ] && sudo chown -R $USER ~/Library/Preferences/
+cp iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
+
 mkdir -p ~/Library/Keybindings/ && sudo cp DefaultKeyBinding.dict ~/Library/Keybindings/
-mkdir -p ~/Library/Application\ Support/Sublime\ Text/ && sudo cp -r ../sublime-text-3/ ~/Library/Application\ Support/Sublime\ Text/
+
+mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/
+[ "$(stat -f '%Su' ~/Library/Application\ Support/Sublime\ Text\ 3/)" != "$USER" ] && sudo chown -R $USER ~/Library/Application\ Support/Sublime\ Text\ 3/
+cp -r sublime-text-3/ ~/Library/Application\ Support/Sublime\ Text\ 3/
 
 # Removes the caps lock delay. Could also be in ~/Library/LaunchAgents/
 # Can also move to ~/Library/LaunchAgents/
