@@ -1,6 +1,18 @@
 #!/bin/zsh
 
+export HOMEBREW_NO_AUTO_UPDATE=1
 brew bundle install --file Brewfile
+
+# use specific pure 1.23.0 due to some change in prompt format with venv
+curl -o /tmp/pure.rb https://raw.githubusercontent.com/Homebrew/homebrew-core/6822ee47cea80d875e3d0395a361bfc45e17e80d/Formula/p/pure.rb
+# set HOMEBREW_DEVELOPER=1 since installing local formulae is disallowed https://github.com/Homebrew/brew/issues/20614#issuecomment-3242822795
+HOMEBREW_DEVELOPER=1 brew install --formula /tmp/pure.rb
+brew pin pure
+
+# install iterm2 3.5 since 3.6 shows changelog popup permanently on every open
+curl -L https://iterm2.com/downloads/stable/iTerm2-3_5_14.zip -o /tmp/iterm2-3.5.14.zip
+unzip /tmp/iterm2-3.5.14.zip -d /tmp/iterm2-3.5.14/
+sudo mv /tmp/iterm2-3.5.14/iTerm.app /Applications/iTerm.app
 
 mkdir -p ~/.config/karabiner && cp karabiner.json ~/.config/karabiner/
 mkdir -p ~/.local/bin && cp -r ../bin/* ~/.local/bin/
