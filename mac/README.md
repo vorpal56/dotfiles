@@ -9,13 +9,40 @@ source ~/.zshrc
 ./setup.sh
 ```
 
-1. Turn off clicking wallpaper to reveal desktop by going into Settings > Desktop & Dock > Desktop & Stage Manager > Click wallpaper to reveal desktop is Only in Stage Manager
-2. Configure the settings of mos, rectangle, dockdoor, karabiner-elements
+# System Settings
 
-   - to open on login
-   - TODO: figure out how to copy settings through setup.sh? there's plist files in ~/Library/Preferences? eg. `iterm2_profile.json`
+## Login items & Extensions
+- mos
+- rectangle
+- karabiner-elements
 
-## Considerations:
+## Desktop & Dock
+- Dock position on screen: right
+- Minimized window animation: scale effect
+- Desktop & Stage manager
+   - Click wallpaper to show desktop: only in stage manager
+   - Stage manager: off
+- Hot corner shortcuts
+   - Top right: Mission control
+   - Bottom right: Application windows
+
+
+## Keyboard Shortcuts
+- Mission Control
+   - Move left a space: off - allows `ctrl+left` to be used properly
+   - Move right a space: off - fixes `ctrl+right` to be used properly
+- Screenshots
+   - Save picture of selected area as a file: off - you can turn this on if you want
+   - Copy picture of selected area to the clipboard: `ctrl+shift+\`
+   - Screenshot and recording options: `cmd+shift+\`
+- App Shortcuts
+   - Add Brave Browser
+      - Developer Tools: `ctrl+shift+i`
+- Modifier keys
+   - Function (fn) key: `ctrl`
+
+
+## Other applications:
 
 1. Alfred: not really sure what I can use it for - https://www.alfredapp.com/
 2. Sidebar: cause the default dock is trash. would like the dock on both screens on the left. its not that expensive - https://sidebarapp.net/
