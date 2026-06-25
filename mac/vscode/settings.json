@@ -1,0 +1,100 @@
+{
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    // "workbench.colorTheme": "One Monokai",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.colorCustomizations": {
+        "gitlens.trailingLineForegroundColor": "#7399C5",
+        // "editor.selectionBackground": "#37474F",
+        // "editor.selectionHighlightBackground": "#37474F",
+        "scrollbarSlider.activeBackground": "#91A9C5",
+        "scrollbarSlider.hoverBackground": "#7399C5",
+        "scrollbarSlider.background": "#7399C5"
+        // "scrollbarSlider.hoverBackground": "#0088FF",
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "gitlens.defaultDateStyle": "absolute",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "[typescript]": {
+        "editor.tabSize": 4
+    },
+    "editor.wordWrapColumn": 300,
+    "editor.minimap.maxColumn": 250,
+    "editor.wordWrap": "off",
+    "html.format.wrapLineLength": 250,
+    "html.format.wrapAttributes": "aligned-multiple",
+    "typescript.format.semicolons": "insert",
+    "editor.wrappingStrategy": "advanced",
+    "editor.mouseWheelZoom": true,
+    "errorLens.messageTemplate": "$source: $message",
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "info",
+        "hint"
+    ],
+    "workbench.editor.revealIfOpen": true,
+    "editor.tokenColorCustomizations": {
+        "comments": "#9FA8DA"
+    },
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/.venv/bin/python",
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/venv/**": true,
+        "**/.venv/**": true,
+        "**/*_cache*/**": true
+    },
+    "eslint.quiet": true,
+    "editor.fontFamily": "'Geist Mono Light', 'Jetbrains Mono Light', 'Oxygen Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "security.workspace.trust.untrustedFiles": "open",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "terminal.integrated.fontSize": 16,
+    "editor.fontLigatures": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.fontWeight": "normal",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.indentSize": 4
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+        "editor.indentSize": 4,
+        "editor.autoIndent": "advanced",
+    },
+    "python.terminal.activateEnvironment": false, 
+    "ruff.lint.ignore": [
+        "F401" // disable fix for unused imports
+    ],
+    "prettier.tabWidth": 4,
+    "workbench.editor.empty.hint": "hidden",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.sendKeybindingsToShell": false,
+    "terminal.integrated.macOptionIsMeta": false,
+    "windsurfPyright.disableLanguageServices": true,
+    "python.languageServer": "Pylance",
+}
